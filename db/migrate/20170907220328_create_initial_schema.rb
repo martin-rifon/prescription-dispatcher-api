@@ -12,7 +12,9 @@ class CreateInitialSchema < ActiveRecord::Migration[5.1]
       t.string :name
     end
 
-    create_join_table :ingredients, :formulations do |t|
+    create_join_table :formulations, :ingredients do |t|
+      t.index :formulation_id
+      t.index :ingredient_id
       t.float :percentage
     end
   end

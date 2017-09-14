@@ -1,0 +1,23 @@
+%link{ rel: :stylesheet, type: :"text/css", href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' }
+
+%p
+  Name: #{patient_information['name']}
+%p
+  Date of birth: #{patient_information['dateOfBirth']}
+%p
+  Street address: #{patient_information['streetAddress']}
+%p
+  City: #{patient_information['city']}
+%p
+  State: #{patient_information['state']}
+%p
+  Zip: #{patient_information['zip']}
+%p
+  Phone: #{patient_information['phone']}
+
+%ul.list-group
+  - ingredients.each do |ingredient|
+    %li.list-group-item
+      %span.badge
+        = ingredient['percentage']
+      = ingredient['name']
